@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.container {
+    position: relative;
+    width: 90%; /* Adjust this width as necessary */
+    max-width: 5000px; /* Limit the maximum width for larger screens */
+    aspect-ratio: 16/9; /* Maintain the video aspect ratio */
+    background: #0f0f0f;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Light shadow for contrast */
+    overflow: hidden; /* Ensure video stays within the rounded corners */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire container */
+    border-radius: inherit; /* Inherit the container's border-radius */
+}
+
+h1 {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 2.5rem;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.7); /* Slightly transparent background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        top: 8px;
+        left: 8px;
+        padding: 8px 16px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 12px 24px;
+        bottom: 15px;
+    }
+
+    .container {
+        width: 95%; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        padding: 6px 12px;
+        top: 5px;
+        left: 5px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+        bottom: 10px;
+    }
+
+    .container {
+        width: 100%; /* Full width on very small screens */
+    }
+}

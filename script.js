@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loader = document.querySelector('.banter-loader');
     const logo = document.querySelector('.logo');
+    const mainContent = document.querySelector('.main-content');
 
     // Set the duration of your loader animation (in milliseconds)
     const loaderDuration = 2000; // Adjust to match your loader animation duration
-    const transitionDuration = 500; // Duration for the flip and fade-out effects
+    const transitionDuration = 1000; // Duration for the flip and fade-out effects
 
     // Ensure the logo is hidden initially and flipped
     logo.style.opacity = '0';
@@ -22,6 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
             logo.style.transition = `transform ${transitionDuration}ms ease-in, opacity ${transitionDuration}ms ease-in`; // Transition for flipping and opacity
             logo.style.transform = 'rotateY(0deg)'; // Flip the logo to its original position
             logo.style.opacity = '1'; // Show the logo
+
+            // Fade out the logo and display the main content
+            setTimeout(() => {
+                logo.style.transition = `opacity ${transitionDuration}ms ease-out`;
+                logo.style.opacity = '0';
+
+                // Show the main content after the logo fades out
+                setTimeout(() => {
+                    logo.style.display = 'none'; // Hide the logo
+                    mainContent.style.display = 'block'; // Show the main content
+                    mainContent.style.transition = `opacity ${transitionDuration}ms ease-in`;
+                    mainContent.style.opacity = '1'; // Fade in the main content
+                }, transitionDuration);
+
+            }, 1000); // Delay to show the logo before fading out
+
         }, transitionDuration); // Delay to match the fade-out duration
     }, loaderDuration);
 });

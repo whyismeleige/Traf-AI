@@ -1,17 +1,17 @@
-/* Basic Reset */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
 body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000000;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  overflow: hidden;
 }
 
-/* From Uiverse.io by Nawsome */ 
 .banter-loader {
     position: absolute;
     left: 50%;
@@ -520,7 +520,7 @@ body, html {
 
 /* Logo Style */
 .logo img {
-    width: 60px;  /* Set a small size for the logo */
+    width: 500px;  /* Set a small size for the logo */
     height: auto;  /* Maintain aspect ratio */
     opacity: 1;
     transition: opacity 1s;
@@ -541,3 +541,163 @@ body, html {
   position: absolute;
   z-index: 10;
 }
+
+/* Main Content */
+.main-content {
+  display: none; /* Initially hidden */
+  opacity: 0;
+  text-align: center;
+  color: #fff;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out; 
+  position: absolute;
+  z-index: 10;
+  transform: translateY(20px); /* Initial position for subtle slide-up effect */
+}
+
+.main-content.show {
+  display: block; /* Show when ready */
+  opacity: 1;
+  transform: translateY(0); /* Slide into place */
+}
+
+/* Headings */
+h1 {
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  font-size: 3rem; /* Larger font size for emphasis */
+  font-weight: 700; /* Bold weight for impact */
+  color: #ffffff; /* White text color */
+  text-transform: capitalize; /* Capitalizes the first letter of each word */
+  letter-spacing: 1px; /* Subtle letter spacing */
+  margin-bottom: 20px; /* Space below the heading */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for depth */
+  transition: color 0.3s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition on hover */
+  transform: translateY(-10px);
+}
+
+h1:hover {
+  color: #67a9ff; /* Subtle blue color on hover */
+  transform: translateY(0);
+}
+
+/* Paragraph */
+p {
+  font-family: 'Raleway', sans-serif; /* Modern sans-serif font */
+  font-size: 1.5rem; /* Comfortable reading size */
+  color: #cccccc; /* Soft gray text color */
+  line-height: 1.8; /* Generous line spacing */
+  margin-bottom: 30px; /* Space below the paragraph */
+  transition: color 0.3s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition on hover */
+  transform: translateY(-10px);
+}
+
+p:hover {
+  color: #67a9ff; /* Subtle blue color on hover */
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media(max-width:768px){
+  h1{
+    font-size: 2.5rem;
+  }
+  p{
+    font-size: 1rem;
+  }
+}
+
+@media(max-width:400px){
+  h1{
+    font-size: 2rem;
+  }
+  p{
+    font-size: 0.875rem;
+  }
+}
+
+/* Buttons */
+/* Updated Button Styles */
+a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #fefefe;
+  text-transform: uppercase;
+  color: #fefefe;
+  text-decoration: none;
+  font-family: 'Lora', serif; /* Use a serif font for elegance */
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 1.5px; /* Slightly increase letter spacing for readability */
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 12px);
+  background-color: #212121;
+  transition: 0.3s ease-in-out;
+  transform: scaleY(1);
+}
+
+a:hover::before {
+  transform: scaleY(0);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: -2px;
+  height: calc(100% + 4px);
+  width: calc(100% - 12px);
+  background-color: #212121;
+  transition: 0.3s ease-in-out;
+  transform: scaleX(1);
+  transition-delay: 0.5s;
+}
+
+a:hover::after {
+  transform: scaleX(0);
+}
+
+a:hover {
+  color: #67a9ff; /* Change text color on hover for a subtle effect */
+  border-color: #67a9ff; /* Change border color on hover */
+}
+
+a span {
+  position: relative;
+  z-index: 3;
+}
+
+button {
+  background-color: none;
+  text-decoration: none;
+  background-color: #212121;
+  border: none;
+  font-family: 'Lora', serif; /* Use the same font as the link */
+  font-size: 20px; /* Match the font size with the link */
+  color: #fefefe;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #67a9ff; /* Change background color on hover */
+  color: #212121; /* Change text color on hover */
+}
+
+@media (max-width: 600px) {
+  a.button, button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
