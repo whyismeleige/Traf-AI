@@ -1,37 +1,37 @@
 /* Basic styling for the container and form */
 body {
-    font-family: 'Roboto', sans-serif; /* Use a modern font for a clean look */
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #000000;
     margin: 0;
-    color: #fff; /* Ensure text is white for better readability */
+    color: #fff;
+    text-align: center;
 }
 
 .container {
-    text-align: center;
-    padding: 40px; 
-    background: linear-gradient(145deg, #1a1a1a, #000000); /* Gradient background for depth */
+    padding: 30px;
+    background: linear-gradient(145deg, #1a1a1a, #000000);
     border: 2px solid #fff;
-    border-radius: 20px; /* More rounded corners for a softer look */
-    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1); /* Deeper shadow for a more dramatic effect */
-    max-width: 500px; /* Constrain the width for a more compact look */
-    width: 90%; /* Make it responsive */
-    transition: transform 0.3s ease-in-out; /* Smooth scale on hover */
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+    max-width: 500px;
+    width: 90%;
+    transition: transform 0.3s ease-in-out;
 }
 
 .container:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    background-color: #0a0a0a; /* Darker on hover */
+    transform: scale(1.05);
+    background-color: #0a0a0a;
 }
 
 h1 {
     color: #fff;
-    font-size: 2rem; /* Larger font size for better emphasis */
+    font-size: 2rem;
     margin-bottom: 20px;
-    letter-spacing: 0px; /* Increase letter spacing for a more polished look */
+    letter-spacing: 0px;
 }
 
 form {
@@ -40,42 +40,97 @@ form {
 
 label {
     display: block;
-    margin-bottom: 15px; 
-    color: #f5f5f5; 
+    margin-bottom: 15px;
+    color: #f5f5f5;
     font-size: 1rem;
 }
 
 input[type="file"] {
     display: block;
     margin: 20px auto;
-    padding: 15px; 
+    padding: 15px;
     border: 2px solid #fff;
-    border-radius: 10px; 
-    background-color: #222; 
+    border-radius: 10px;
+    background-color: #222;
     color: #fff;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 button {
-    padding: 12px 25px; 
+    padding: 12px 25px;
     border: 2px solid #fff;
-    border-radius: 30px; 
+    border-radius: 30px;
     background-color: #000000;
     color: #fff;
     font-size: 16px;
     margin-top: 20px;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s, transform 0.3s; /* Smooth transitions */
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
 }
 
 button:hover {
-    background-color: #444444; 
-    border-color: #888; 
-    transform: translateY(-5px); 
+    background-color: #444444;
+    border-color: #888;
+    transform: translateY(-5px);
 }
 
 #output {
     margin-top: 20px;
-    font-size: 1.2rem; 
-    color: #cccccc; 
+    font-size: 1.2rem;
+    color: #cccccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    input[type="file"] {
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #output {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    label {
+        font-size: 0.8rem;
+    }
+
+    input[type="file"] {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    #output {
+        font-size: 0.9rem;
+    }
 }
